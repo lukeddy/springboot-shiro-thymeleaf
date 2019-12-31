@@ -76,4 +76,12 @@ public class HomeController {
         model.addAttribute("msg","安全退出！");
         return "login";
     }
+
+    /**
+     * 模拟服务端发生异常
+     */
+    @RequestMapping("/testError")
+    public void handleRequest() {
+        throw new RuntimeException("test exception");
+    }
 }
