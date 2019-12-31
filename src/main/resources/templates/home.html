@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title th:text="'404（找不到页面）-'">404标题</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="shortcut icon" th:href="@{/assets/images/favico.png}"/>
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+<!--    <link th:href="@{https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>-->
+    <!--[if lt IE 9]>
+    <script src="//cdn.bootcss.com/html5shiv/r29/html5.min.js"></script>
+    <script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <h3 class="page-header text-center">首页</h3>
+    <div class="d-flex justify-content-around">
+        <div shiro:hasPermission="user:add">
+            <a href="/user/add">添加用户</a>
+        </div>
+        <div shiro:hasPermission="user:update">
+            <a href="/user/update">更新用户</a>
+        </div>
+        <a href="/user/other">其它资源</a>
+        <a shiro:guest="" href="/login">登录</a>
+        <a shiro:authenticated="" href="/logout">退出</a>
+    </div>
+</div>
+</body>
+</html>
