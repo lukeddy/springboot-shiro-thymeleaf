@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
-    <title>新增用户页面</title>
+    <title th:text="'500（找不到页面）-'">标题</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <link rel="shortcut icon" th:href="@{/assets/images/favico.png}"/>
@@ -14,14 +14,15 @@
     <![endif]-->
 </head>
 <body>
-<div class="container d-flex flex-column align-items-center justify-content-center" style="width:100vh;height:100vh;">
-    <div  class="d-flex flex-column align-items-center justify-content-center">
-        <h3 class="display-1" th:text="${statusCode}">状态码</h3>
-        <p class="text-danger" th:if="${null!=error}">
-            服务端出错啦：<span th:text="${error}">错误原因</span>
-        </p>
-        <a href="/home">首页</a>
-    </div>
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h3 class="page-header text-center text-danger">500</h3>
+    <p>服务器内部错误！</p>
+    <a href="/home">首页</a>
 </div>
 </body>
 </html>

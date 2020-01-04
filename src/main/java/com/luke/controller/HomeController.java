@@ -1,5 +1,6 @@
 package com.luke.controller;
 
+import com.luke.exception.SystemException;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
@@ -77,11 +78,14 @@ public class HomeController {
         return "login";
     }
 
-    /**
-     * 模拟服务端发生异常
-     */
-    @RequestMapping("/testError")
-    public void handleRequest() {
-        throw new RuntimeException("test exception");
+    @GetMapping("/testSystemError")
+    public String testSystemError(){
+        throw new SystemException("系统异常");
+    }
+
+    @GetMapping("/testUnknowError")
+    public String testUnknowError(){
+        int num=1/0;
+        return "home";
     }
 }
